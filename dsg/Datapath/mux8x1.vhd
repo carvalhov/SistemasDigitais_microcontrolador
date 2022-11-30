@@ -2,7 +2,7 @@ library ieee;
 
 use ieee.std_logic_1164.all;
 
-entity mux4x1 is
+entity mux8x1 is
         port
         (
           -- Input ports (Reg0, Reg1, ..., Reg4)
@@ -12,9 +12,9 @@ entity mux4x1 is
           -- Output ports
           S : out std_logic_vector(15 downto 0)
         );
-end mux4x1;
+end mux8x1;
   
-architecture behaviour of mux4x1 is
+architecture behaviour of mux8x1 is
 begin
   process (Reg0, Reg1, Reg2, Reg3, Reg4, S)
     begin
@@ -28,7 +28,7 @@ begin
         S <= Reg3;
       elsilf sel = "100" then --
         S <= Reg4;
-      else -- Pode ser a entrada 0, logo null, compondo quatro possíveis entradas no mux. 
+      else -- Pode ser a entrada 0, logo null, compondo as 8 possíveis entradas no mux. 
         S <= Null;
       end if;
   end process;
