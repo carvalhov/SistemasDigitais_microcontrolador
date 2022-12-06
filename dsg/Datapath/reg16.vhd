@@ -19,10 +19,9 @@ architecture behavioral of Reg16 is
 begin
  process(clk, ld)
   begin
-   if(rising_edge(clk) and ld = '1') then
-     Y <= X;
-   else
-     Y <= Y; -- Corrigir no cyclone II 
+     if(rising_edge(clk) and ld = '1') then
+       Y <= X;
+     else null; -- Faz nada
    end if;
   end process;
 end behavioral;
